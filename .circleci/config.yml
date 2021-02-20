@@ -2,7 +2,8 @@ version: 2.1
 jobs:
   # 'build' is the 1st and only job
   build:
-    working_directory: ~/repo
+    # working_directory: ~/repo
+    working_directory: ~/project
     docker:
       # Pull CircleCI Docker image for Go as the testing environ.
       - image: circleci/golang:1.14.6
