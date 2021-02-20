@@ -18,3 +18,9 @@
 * This error was resolved after running `go mod init go-testing-circleci` in root.
 
 ### Build successful but still getting errors for "Restoring cache" and "Saving cache"
+* Received this same error for those two steps:
+  ```
+  error computing cache key: template: cacheKey:1:13: executing "cacheKey" at <checksum "go.sum">: error calling checksum: open /home/circleci/project/go.sum: no such file or directory
+  ```
+* However, I think it's because this repo has no external dependencies that need to be downloaded, so a go.sum file is not created.
+  - Therefore, those errors should be normal and expected in this project.
