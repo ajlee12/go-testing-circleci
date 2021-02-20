@@ -7,7 +7,6 @@ jobs:
       # Pull CircleCI Docker image for Go as the testing environ.
       - image: circleci/golang:1.14.6
     steps:
-      # Check out project code from remote repo.
       - checkout
       - restore_cache:
           keys:
@@ -15,7 +14,6 @@ jobs:
       - run:
           name: Install Dependencies
           command: go get ./...
-      # Cache deps after installation.
       - save_cache:
           key: go-mod-v4-{{ checksum "go.sum" }}
           paths:
